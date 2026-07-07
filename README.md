@@ -74,4 +74,29 @@ On failure, `metrics.json` instead looks like:
   "error_message": "Input CSV is missing required 'close' column"
 }
 ```
+## Project Structure
+project/
+├── run.py           # main script
+├── config.yaml      # seed, window, version
+├── data.csv         # input data (10,000 rows OHLCV)
+├── requirements.txt
+├── Dockerfile
+├── README.md
+├── metrics.json     # sample output from a successful run
+└── run.log          # sample log from a successful run
+
+## Error Handling Behaviour
+
+The job wraps its entire execution in a single try/except block. Any
+failure — a missing input file, invalid YAML, a missing `close` column,
+an empty file, or an unexpected error — is:
+
+1. logged with a full stack trace,
+2. recorded in `metrics.json` as a `status: "error"` entry with a
+   descriptive `error_message`,
+3. reflected in the process exit code (non-zero).
+
+This means `metrics.json` is always produced, regardless of whether the
+job succeeded, which makes it safe to check in downstream automation
+without special-casing failures.
 
