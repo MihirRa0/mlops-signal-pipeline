@@ -75,4 +75,3 @@ On failure, `metrics.json` instead looks like:
 }
 ```
 
-## Project Structure
