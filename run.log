@@ -1,0 +1,8 @@
+2026-07-07 19:48:32,165 - INFO - Job start
+2026-07-07 19:48:32,165 - INFO - Config loaded
+2026-07-07 19:48:32,165 - INFO - Validation passed
+2026-07-07 19:48:32,195 - INFO - Rows loaded: 10000
+2026-07-07 19:48:32,197 - INFO - Rolling mean computed
+2026-07-07 19:48:32,197 - INFO - Signals generated
+2026-07-07 19:48:32,200 - INFO - Metrics written
+2026-07-07 19:48:32,200 - INFO - Job completed
